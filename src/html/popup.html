@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Red Track</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<main class="all-wrapper">
+    <header class="header">
+        <div class="logo">
+            <img class="logo__icon" src="logo-icon.svg" alt="">
+            <h2 class="logo__heading heading-1">Red Track</h2>
+        </div>
+        <ul class="menu">
+            <li class="menu__item menu__item--active">
+                <a class="menu__item-link nav-item" data-go-to="timers">Timers</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__item-link nav-item" data-go-to="tasks">Tasks</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__item-link nav-item" data-go-to="logs">Logs</a>
+            </li>
+        </ul>
+        <div class="options ">
+            <a class="options options--active" data-go-to="options">
+                <img class="options__icon" src="options-icon.svg" alt="">
+            </a>
+        </div>
+    </header>
+    <div class="content">
+        <div id="timers">
+            <h1 class="page-heading">
+                Timers
+            </h1>
+
+            <div class="panel-wrapper">
+                <div class="panel">
+                    <div class="panel__head">
+                        <div class="panel__task">
+                            <div class="task__id">
+                                Task #1234
+                            </div>
+                            <div class="task__links-wrap">
+                                <a class="task__link link">Link</a>
+                            </div>
+                        </div>
+                        <div class="task__detail">
+                            <h2 class="task__detail-heading task-heading">
+                                Really pretty long Task name with some shit and other staff…
+                            </h2>
+                            <div class="task__detail-info muted">
+                                <span class="task__detail-item">
+                                    Status: Waiting for approval
+                                </span>
+                                <span class="task__detail-item">
+                                    Done: 100%
+                                </span>
+                            </div>
+                        </div>
+                        <div class="task__controls-wrap">
+                            <div class="task__control">
+                                <img src="pause.svg" alt="">
+                            </div>
+                            <div class="task__control">
+                                <img src="check.svg" alt="">
+                            </div>
+                            <div class="task__control">
+                                <img src="delete.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="task__timer large-timer">
+                            01:00:00:00
+                        </div>
+                    </div>
+                    <div class="panel__body">
+                        <div class="timer">
+                            <div class="timer__controls">
+                                <div class="timer__increase-group">
+                                    <div class="btn btn--dark">-1h</div>
+                                    <div class="btn btn--dark">-30m</div>
+                                    <div class="btn btn--dark">-15m</div>
+                                    <div class="btn btn--dark">-5m</div>
+                                    <div class="btn btn--dark">-1m</div>
+                                </div>
+                                <input class="timer__input" name="timer_count">
+                                <div class="timer__decrease-group">
+                                    <div class="btn btn--dark">+1m</div>
+                                    <div class="btn btn--dark">+5m</div>
+                                    <div class="btn btn--dark">+15m</div>
+                                    <div class="btn btn--dark">+30m</div>
+                                    <div class="btn btn--dark">+1h</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tasks">
+
+        </div>
+        <div id="logs">
+
+        </div>
+        <div id="options">
+
+        </div>
+    </div>
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>

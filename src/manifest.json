@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Red Track",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_icon": {
+      "16": "icon16x16.png",
+      "24": "icon24x24.png",
+      "32": "icon32x32.png"
+    },
+    "default_title": "Red Track",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "webRequest",
+    "http://*/*",
+    "https://*/*",
+    "cookies",
+    "storage",
+    "tabs",
+    "activeTab",
+    "webRequestBlocking",
+    "webNavigation"
+  ],
+  "icons": {
+    "16": "icon16x16.png",
+    "48": "icon48x48.png",
+    "128": "icon128x128.png"
+  }
+}
