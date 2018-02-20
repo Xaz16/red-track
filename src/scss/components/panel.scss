@@ -3,6 +3,14 @@
 	margin-bottom: 15px;
 }
 
+.panel--opened {
+	.panel__body {
+		height: 56px;
+		padding: 15px;
+		visibility: visible;
+	}
+}
+
 .panel__head {
 	padding: 8px 15px 0;
 	height: 46px;
@@ -15,6 +23,7 @@
 
 .panel__body {
 	background-color: $dark-bg;
-	height: 56px;
-	padding: 15px;
+
+	visibility: hidden;
+	height: 0;
 }
