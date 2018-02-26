@@ -29,9 +29,11 @@
 
 .menu__item {
 	width: 115px;
-	display: flex;
 	height: 52px;
 
+	cursor: pointer;
+
+	display: flex;
 	justify-content: center;
 	align-items: center;
 }

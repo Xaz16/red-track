@@ -66,6 +66,7 @@ module.exports = {
       bootstrap: path.join(__dirname, '/node_modules/bootstrap/scss/bootstrap.scss')
     }
   },
+  devtool: 'inline-source-map',
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'build'),
