@@ -4,6 +4,11 @@
 
 .task__detail {
 	max-width: 245px;
+
+	&.task__detail--wide {
+		flex: 0.9 0.6 245px;
+		max-width: unset;
+	}
 }
 
 .task__detail-heading {
@@ -35,4 +40,9 @@
 
 .task__control {
 	cursor: pointer;
+}
+
+.task__link {
+	margin-right: 10px;
+	display: inline-block;
 }

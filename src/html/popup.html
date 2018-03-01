@@ -18,10 +18,10 @@
             <h2 class="logo__heading heading-1">Red Track</h2>
         </div>
         <ul class="menu">
-            <li class="menu__item menu__item--active">
+            <li class="menu__item">
                 <a class="menu__item-link nav-item" data-go-to="timers">Timers</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item menu__item--active">
                 <a class="menu__item-link nav-item" data-go-to="tasks">Tasks</a>
             </li>
             <li class="menu__item">
@@ -37,14 +37,14 @@
         </ul>
     </header>
     <div class="content">
-        <div data-page data-page-active id="timers">
+        <div data-page id="timers">
             <h1 class="page-heading">
                 Timers
             </h1>
 
             <div class="panel-wrapper">
                 <div class="panel panel--opened">
-                    <div class="panel__head">
+                    <div class="panel__head task">
                         <div class="panel__task">
                             <div class="task__id">
                                 Task #1234
@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 <div class="panel panel--opened">
-                    <div class="panel__head">
+                    <div class="panel__head task">
                         <div class="panel__task">
                             <div class="task__id">
                                 Task #1234
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <div class="panel">
-                    <div class="panel__head">
+                    <div class="panel__head task">
                         <div class="panel__task">
                             <div class="task__id">
                                 Task #1234
@@ -224,7 +224,7 @@
                     </div>
                 </div>
                 <div class="panel">
-                    <div class="panel__head">
+                    <div class="panel__head task">
                         <div class="panel__task">
                             <div class="task__id">
                                 Task #1234
@@ -285,7 +285,145 @@
                 </div>
             </div>
         </div>
-        <div data-page id="tasks">
+        <div data-page data-page-active id="tasks">
+            <h1 class="page-heading">
+                Tasks
+            </h1>
+
+            <div class="panel-wrapper">
+                <div class="panel">
+                    <div class="panel__head task">
+                        <div class="panel__task">
+                            <div class="task__id">
+                                Task #1234
+                            </div>
+                            <div class="task__links-wrap">
+                                <a class="task__link link">Link</a>
+                                <a class="task__link link">Start timer</a>
+                                <a class="task__link link">Stop timer</a>
+                            </div>
+                        </div>
+                        <div class="task__detail task__detail--wide">
+                            <h2 class="task__detail-heading task-heading">
+                                Really pretty long Task name with some shit and other staff…
+                            </h2>
+                            <div class="task__detail-info muted">
+                                <span class="task__detail-item">
+                                    Timers: 2
+                                </span>
+                                <span class="task__detail-item">
+                                    Assignee: Aleksey front-end
+                                </span>
+                                <span class="task__detail-item">
+                                    Status: Waiting for approval
+                                </span>
+                                <span class="task__detail-item">
+                                    Done: 100%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel__head task">
+                        <div class="panel__task">
+                            <div class="task__id">
+                                Task #1234
+                            </div>
+                            <div class="task__links-wrap">
+                                <a class="task__link link">Link</a>
+                                <a class="task__link link">Start timer</a>
+                                <a class="task__link link">Stop timer</a>
+                            </div>
+                        </div>
+                        <div class="task__detail task__detail--wide">
+                            <h2 class="task__detail-heading task-heading">
+                                Really pretty long Task name with some shit and other staff…
+                            </h2>
+                            <div class="task__detail-info muted">
+                                <span class="task__detail-item">
+                                    Timers: 2
+                                </span>
+                                <span class="task__detail-item">
+                                    Assignee: Aleksey front-end
+                                </span>
+                                <span class="task__detail-item">
+                                    Status: Waiting for approval
+                                </span>
+                                <span class="task__detail-item">
+                                    Done: 100%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel__head task">
+                        <div class="panel__task">
+                            <div class="task__id">
+                                Task #1234
+                            </div>
+                            <div class="task__links-wrap">
+                                <a class="task__link link">Link</a>
+                                <a class="task__link link">Start timer</a>
+                                <a class="task__link link">Stop timer</a>
+                            </div>
+                        </div>
+                        <div class="task__detail task__detail--wide">
+                            <h2 class="task__detail-heading task-heading">
+                                Really pretty long Task name with some shit and other staff…
+                            </h2>
+                            <div class="task__detail-info muted">
+                                <span class="task__detail-item">
+                                    Timers: 2
+                                </span>
+                                <span class="task__detail-item">
+                                    Assignee: Aleksey front-end
+                                </span>
+                                <span class="task__detail-item">
+                                    Status: Waiting for approval
+                                </span>
+                                <span class="task__detail-item">
+                                    Done: 100%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel__head task">
+                        <div class="panel__task">
+                            <div class="task__id">
+                                Task #1234
+                            </div>
+                            <div class="task__links-wrap">
+                                <a class="task__link link">Link</a>
+                                <a class="task__link link">Start timer</a>
+                                <a class="task__link link">Stop timer</a>
+                            </div>
+                        </div>
+                        <div class="task__detail task__detail--wide">
+                            <h2 class="task__detail-heading task-heading">
+                                Really pretty long Task name with some shit and other staff…
+                            </h2>
+                            <div class="task__detail-info muted">
+                                <span class="task__detail-item">
+                                    Timers: 2
+                                </span>
+                                <span class="task__detail-item">
+                                    Assignee: Aleksey front-end
+                                </span>
+                                <span class="task__detail-item">
+                                    Status: Waiting for approval
+                                </span>
+                                <span class="task__detail-item">
+                                    Done: 100%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <div data-page id="logs">
