@@ -9,6 +9,15 @@
 		outline: none;
 		border-color: #1ABC9C;
 	}
+
+	&::placeholder {
+		color: $dark;
+		font: {
+			family: 'Lato';
+			weight: 400;
+			size: 14px;
+		}
+	}
 }
 
 .rt-input--wide {
