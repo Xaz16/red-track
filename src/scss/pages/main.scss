@@ -11,10 +11,13 @@
 	position: absolute;
 	width: 670px;
 	top: 18px;
-	transform: translateX(-140%);
+	transform: translateX(140%);
+	height: 0;
+	overflow: hidden;
 	transition: transform 400ms ease;
 }
 
 [data-page-active] {
+	height: auto;
 	transform: translateX(0);
 }
