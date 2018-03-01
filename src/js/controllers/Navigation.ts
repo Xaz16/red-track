@@ -1,4 +1,4 @@
-import { INavigation } from './interfaces/INavigation';
+import { INavigation } from '../interfaces/INavigation';
 
 export class NavigationController implements INavigation {
   public page: string;
