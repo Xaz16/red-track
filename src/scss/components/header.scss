@@ -55,30 +55,36 @@
 }
 
 .options {
+	cursor: pointer;
+}
+
+.options__item {
 	height: 52px;
 	width: 54px;
 	position: relative;
 	z-index: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
-.options--active {
-	&:before {
-		content: '';
+.options__item-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc(100% + 5px);
+	height: 100%;
+	top: 0;
+	position: absolute;
+	right: -15px;
+	border-bottom: 2px solid $dark-bg;
+}
+
+.options__item--active {
+	.options__item-link {
 		background-color: $accent;
 		border-bottom: 2px solid $dark-accent;
-		display: block;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		right: -15px;
 	}
 }
 
 .options__icon {
 	position: relative;
 	z-index: 1;
-	margin-right: -25px;
 }

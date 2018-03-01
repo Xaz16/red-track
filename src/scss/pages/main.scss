@@ -7,13 +7,13 @@
 	position: relative;
 }
 
-.page-block {
+[data-page] {
 	position: absolute;
-	transform: translateX(-100%);
+	top: 18px;
+	transform: translateX(-140%);
 	transition: transform 400ms ease;
 }
 
-.page-block--active {
-	top: 0;
+[data-page-active] {
 	transform: translateX(0);
 }
