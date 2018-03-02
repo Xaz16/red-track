@@ -1,5 +1,5 @@
 export interface IStorage {
-  get: (key: string) => Promise;
-  set: (key: string) => Promise;
-  remove: (key: string) => Promise;
+  get: (key: string|[string]|object) => Promise<object>;
+  set: (key: object) => Promise<void> ;
+  remove: (key: string) => Promise<void>;
 }

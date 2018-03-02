@@ -10,6 +10,7 @@
   "license": "ISC",
   "private": true,
   "devDependencies": {
+    "@types/chrome": "0.0.60",
     "autoprefixer": "^7.2.5",
     "copy-webpack-plugin": "^4.4.1",
     "css-loader": "^0.28.9",
@@ -24,6 +25,5 @@
     "typescript": "^2.7.1",
     "webpack": "^3.11.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
