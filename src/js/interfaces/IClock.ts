@@ -5,4 +5,5 @@ export interface IClock extends ITimer {
   addTimerTemplate: () => number;
   changeDisplayedValue: () => void;
   clear: () => void;
+  start: () => void;
 }

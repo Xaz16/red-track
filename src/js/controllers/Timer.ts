@@ -1,7 +1,7 @@
 import { ITimer } from '../interfaces/ITimer';
 
 export class Timer implements ITimer {
-  private startTime: number;
+  protected startTime: number;
   private dateInstance: Date = new Date();
 
   constructor() {
@@ -12,13 +12,9 @@ export class Timer implements ITimer {
     return this.startTime;
   }
 
-  public start() {
-    const abc = '123';
-  }
+  public start() {}
 
-  public pause() {
-    const abc = '123';
-  }
+  public pause() {}
 
   public getTime() {
     return this.startTime - this.dateInstance.getTime();
