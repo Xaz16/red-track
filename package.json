@@ -4,7 +4,9 @@
   "description": "Chrome extension for track time and log it into redmine",
   "main": "main.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "build:dev": "webpack",
+    "watch": "webpack --watch"
   },
   "author": "Aleksey Chipiga<aleksey.chipiga@abz.agency>",
   "license": "ISC",
