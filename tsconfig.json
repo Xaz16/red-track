@@ -4,6 +4,10 @@
     "noImplicitAny": true,
     "module": "es6",
     "target": "es2016",
-    "allowJs": true
+    "allowJs": true,
+    "baseUrl": "./",
+    "paths": {
+      "axios": ["node_modules/axios/index.d.ts"]
+    }
   }
 }
