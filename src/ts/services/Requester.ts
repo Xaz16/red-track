@@ -13,6 +13,6 @@ export class Requester {
   }
 
   public makeRequest(config: object) {
-    this.instance.request(config);
+    return this.instance.request(config);
   }
 }
