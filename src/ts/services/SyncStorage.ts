@@ -1,4 +1,5 @@
 import { IStorage } from '../interfaces/IStorage';
+import {Credentials} from "../typings/Credentials";
 
 export default class SyncStorageController implements IStorage {
   public static getInstance(): SyncStorageController {
@@ -14,7 +15,7 @@ export default class SyncStorageController implements IStorage {
     SyncStorageController.instance = this;
   }
 
-  public get(key: string|[string]|object): Promise<object> {
+  public get(key: string|[string]|object): Promise<any | object> {
     return new Promise((resolve) => {
       chrome.storage.sync.get(key, (res: any) => {
         resolve(res);

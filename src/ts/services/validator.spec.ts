@@ -16,7 +16,7 @@ const data: ValidateData = {
 
 describe('Test for Validator Service', () => {
   it('validate check pattern and minLength', () => {
-    const validated = Validator.validate(data, {});
+    const validated = Validator.validate(data);
     expect(validated.errors).to.be.a('array');
     expect(validated.isValid).to.be.false;
     expect(validated.errors).to.deep.equal(['minLength', 'pattern']);
@@ -24,7 +24,7 @@ describe('Test for Validator Service', () => {
 
   it('validate check maxLength', () => {
     data.value = 'daawjiodawdhaiwdhiawdiuahidiuawhdawdhawidhawd';
-    const validated = Validator.validate(data, {});
+    const validated = Validator.validate(data);
     expect(validated.errors).to.be.a('array');
     expect(validated.isValid).to.be.false;
     expect(validated.errors).to.deep.equal(['maxLength']);
@@ -32,7 +32,7 @@ describe('Test for Validator Service', () => {
 
   it('validate check required', () => {
     data.value = '';
-    const validated = Validator.validate(data, {});
+    const validated = Validator.validate(data);
     expect(validated.errors).to.be.a('array');
     expect(validated.isValid).to.be.false;
     expect(validated.errors).to.deep.equal(['minLength', 'pattern', 'required']);

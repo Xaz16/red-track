@@ -4,6 +4,4 @@ export interface IAuthGuard {
   checkCredentials: (data: Credentials) => Promise<void>;
   validateInput: ($input: HTMLElement, threshold: number) => void;
   checkPermissions: () => void;
-  restrictAccess: () => void;
-  allowAccess: () => void;
 }

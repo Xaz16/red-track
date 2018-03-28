@@ -1,8 +1,10 @@
 import {ValidateData} from "../typings/ValidateData";
+import {ValidationMessages} from "../typings/ValidationMessages";
 
 export class Validator {
-  public static validate(data: ValidateData, messages: object) {
+  public static validate(data: ValidateData) {
     const val = data.value.trim();
+    const messages = [];
     const errors: string[] = [];
     for (const key in data.rules) {
       if (data.rules.hasOwnProperty(key)) {
@@ -20,6 +22,18 @@ export class Validator {
         }
       }
     }
-    return {errors, isValid: !errors.length};
+    for (const key of errors) {
+      const message = (validationMessages as any)[key].replace(`{${key}}`, (data.rules as any)[key]);
+      messages.push(message);
+    }
+
+    return {errors, isValid: !errors.length, messages};
   }
 }
+
+const validationMessages: ValidationMessages = {
+  maxLength: 'This field should be less than {maxLength} charters',
+  minLength: 'This field should be more than {minLength} charters',
+  pattern: 'This field isn\'t correct',
+  required: 'This field is required',
+};

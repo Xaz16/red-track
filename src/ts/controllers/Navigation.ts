@@ -53,11 +53,11 @@ export class NavigationController implements INavigation {
     this.changePage(name);
   }
 
-  private blockNavigation() {
+  public blockNavigation() {
     this.unbindNavigation();
   }
 
-  private allowNavigation() {
+  public allowNavigation() {
     this.bindToElement();
   }
 
@@ -68,9 +68,5 @@ export class NavigationController implements INavigation {
         this.goToPage(name);
       });
     }
-  }
-
-  private redirectOnAuth() {
-    this.goToPage('auth');
   }
 }
