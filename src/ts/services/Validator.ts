@@ -1,7 +1,6 @@
-import {IValidator} from "../interfaces/IValidator";
 import {ValidateData} from "../typings/ValidateData";
 
-export class Validator implements IValidator {
+export class Validator {
   public static validate(data: ValidateData, messages: object) {
     const val = data.value.trim();
     const errors: string[] = [];
@@ -22,10 +21,5 @@ export class Validator implements IValidator {
       }
     }
     return {errors, isValid: !errors.length};
-  }
-  public options: object;
-
-  constructor(options: object) {
-    this.options = options;
   }
 }

@@ -1,7 +1,9 @@
 import {Credentials} from "../typings/Credentials";
 
 export interface IAuthGuard {
-  checkCredentials: (data: Credentials) => boolean;
-  validateInput: ($input: HTMLElement) => void;
+  checkCredentials: (data: Credentials) => Promise<void>;
+  validateInput: ($input: HTMLElement, threshold: number) => void;
   checkPermissions: () => void;
+  restrictAccess: () => void;
+  allowAccess: () => void;
 }

@@ -5,38 +5,60 @@ import {Validator} from "../services/Validator";
 import {Credentials} from "../typings/Credentials";
 
 export class AuthGuard implements IAuthGuard {
-  public syncStorage: SyncStorageController;
-  private Requester: Requester;
+  private syncStorage: SyncStorageController;
   private Validator: Validator;
+  private isCredentialsValid: boolean;
 
-  constructor(syncStorage: SyncStorageController, validator: Validator, requester: Requester) {
-    this.syncStorage = syncStorage;
-    this.Validator = validator;
-    this.Requester = requester;
+  constructor() {
+    this.syncStorage = new SyncStorageController();
+    this.Validator = new Validator();
     setInterval(this.checkPermissions, 60000);
   }
 
-  public checkCredentials(data: Credentials): boolean {
-    let isValid = false;
-    if (true) {
-      isValid = true;
+  public async checkCredentials(data: Credentials): Promise<void> {
+    const RequesterInst = new Requester({
+      apiKey: data.apiKey,
+      apiUrl: data.apiUrl,
+    });
+    try {
+      const res = await RequesterInst.makeRequest({
+        method: 'GET',
+        url: '/users/current.json',
+      });
+
+      if (res.status === 200) {
+        this.isCredentialsValid = true;
+      }
+    } catch (e) {
+      throw new Error(e);
     }
-    return isValid;
+
   }
 
-  public validateInput($input: HTMLElement): void {
+  public validateInput($input: HTMLElement, threshold: number): void {
     const message = ';;';
   }
 
   public checkPermissions() {
-    const credentials = this.getCredentials;
+    this.getCredentials.then((res: { apiUrl: string, apiKey: string }) => {
+      const cred = new Credentials(res);
+      this.checkCredentials(cred);
+    });
   }
 
   private setCredentials(data: object): void {
     this.syncStorage.set({credentials: data});
   }
 
-  private get getCredentials(): object {
+  private get getCredentials(): Promise<object> {
     return this.syncStorage.get('credentials');
+  }
+
+  private restrictAccess() {
+    const restrict = false;
+  }
+
+  private allowAccess() {
+    const restrict = false;
   }
 }
