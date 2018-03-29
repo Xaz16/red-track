@@ -7,7 +7,7 @@
     "allowJs": true,
     "baseUrl": "./",
     "paths": {
-      "axios": ["node_modules/axios/index.d.ts"]
+      "axios": ["node_modules/axios"]
     }
   }
 }

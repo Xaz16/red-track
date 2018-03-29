@@ -13,25 +13,31 @@ export class AuthGuard implements IAuthGuard {
   private isCredentialsValid: boolean;
 
   constructor(navigation: NavigationController) {
-    this.syncStorage = new SyncStorageController();
+    this.syncStorage = SyncStorageController.getInstance();
     this.Validator = new Validator();
     this.Navigation = navigation;
+
+    document.querySelector('[data-listen-form').addEventListener('broadcast', () => {
+      this.checkPermissions();
+    });
     setInterval(this.checkPermissions, 60000);
   }
 
   public async checkCredentials(data: Credentials): Promise<void> {
-    const RequesterInst = new Requester({
-      apiKey: data.apiKey,
-      apiUrl: data.apiUrl,
-    });
+    const credentials = {
+      apiKey: data.apiKey || '',
+      apiUrl: data.apiUrl || 'google.com',
+    };
+    const RequesterInst = new Requester(credentials);
     try {
       const res = await RequesterInst.makeRequest({
         method: 'GET',
-        url: '/users/current.json',
+        url: credentials.apiUrl + '/users/current.json',
       });
 
       if (res.status === 200) {
         this.isCredentialsValid = true;
+        this.setCredentials(credentials);
       }
     } catch (e) {
       throw new Error(e);
@@ -39,19 +45,29 @@ export class AuthGuard implements IAuthGuard {
 
   }
 
-  public validateInput($input: HTMLInputElement, threshold: number): void {
+  public validateInput($input: any, threshold: number): void {
     $input.addEventListener('change', () => {
       const data: ValidateData = {
-        name: 'test',
+        name: $input.name,
         rules: {
-          maxLength: 20,
-          minLength: 10,
-          pattern: new RegExp('[a-z]', 'gi'),
+          pattern: new RegExp('^(https?:\\/\\/)?([\\w\\.]+)\\.([a-z]{2,6}\\.?)(\\/[\\w\\.]*)*\\/?$', 'gi'),
           required: true,
         },
         value: $input.value,
       };
-      Validator.validate(data);
+      const validatorRes = Validator.validate(data);
+      if (data.value.length >= threshold && !validatorRes.isValid) {
+        const $error: HTMLElement = $input.parentElement.querySelector('.err-messages');
+        let messages = '';
+        validatorRes.messages.map((item) => {
+          messages += `<span>${item}</span><br>`;
+        });
+        $error.innerHTML = messages;
+      }
+      if (validatorRes.isValid) {
+        const event = new Event('broadcast');
+        $input.parents('[data-listen-form]')[0].dispatchEvent(event);
+      }
     });
   }
 
@@ -62,7 +78,7 @@ export class AuthGuard implements IAuthGuard {
     this.isCredentialsValid ? this.allowAccess() : this.restrictAccess();
   }
 
-  private setCredentials(data: Credentials): void {
+  private setCredentials(data: object): void {
     this.syncStorage.set({credentials: data});
   }
 
@@ -78,5 +94,6 @@ export class AuthGuard implements IAuthGuard {
   private allowAccess() {
     this.Navigation.bindToElement();
     this.Navigation.allowNavigation();
+    this.Navigation.goToPage('tasks');
   }
 }

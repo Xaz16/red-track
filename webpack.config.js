@@ -64,7 +64,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '.scss'],
     alias: {
       bootstrap: path.join(__dirname, '/node_modules/bootstrap/scss/bootstrap.scss'),
-      axios: path.join(__dirname, '/node_modules/axios/index.d.ts'),
+      axios: path.join(__dirname, '/node_modules/axios'),
     }
   },
   devtool: 'inline-source-map',
